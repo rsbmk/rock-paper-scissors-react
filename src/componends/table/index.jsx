@@ -1,99 +1,19 @@
-import React, { useContext, useState } from 'react'
-import { Token } from '../token'
+import React from 'react'
 import { TableStyled } from './style-table'
 import { WhiteButton } from '../button/styled-button'
-import scoreContext from '../../context/scoreContext'
 
-const tokes = ['paper', 'scissors', 'rock']
-const rules = [
-  {
-    user: 'paper',
-    home: 'paper',
-    results: 'draw'
-  },
-  {
-    user: 'paper',
-    home: 'rock',
-    results: 'win'
-  },
-  {
-    user: 'paper',
-    home: 'scissors',
-    results: 'lose'
-  },
-  {
-    user: 'rock',
-    home: 'paper',
-    results: 'lose'
-  },
-  {
-    user: 'rock',
-    home: 'rock',
-    results: 'draw'
-  },
-  {
-    user: 'rock',
-    home: 'scissors',
-    results: 'win'
-  },
-  {
-    user: 'scissors',
-    home: 'paper',
-    results: 'win'
-  },
-  {
-    user: 'scissors',
-    home: 'rock',
-    results: 'lose'
-  },
-  {
-    user: 'scissors',
-    home: 'scissors',
-    results: 'draw'
-  }
-]
-function getRamdom ({ min = 0, max = 3 } = {}) {
-  return Math.floor(Math.random() * (max - min)) + min
-}
-
-function victory ({ name: user, pick: home }) {
-  const resu = rules.find((obj) => user === obj.user && home === obj.home)
-  return resu.results || ''
-}
+import { useTable } from '../../hooks/useTable'
+import { Token } from '../token'
 
 export function Table () {
-  const [homePick, setHomePick] = useState('default')
-  const [playing, setPlaying] = useState(false)
-  const [results, setResults] = useState('')
-  const [userPick, setUserPick] = useState('')
-  const { score, setScore } = useContext(scoreContext)
-
-  function launchHomePick () {
-    return new Promise((resolve, reject) => {
-      let pick = ''
-      const interval = window.setInterval(() => {
-        pick = tokes[getRamdom()]
-        setHomePick(pick)
-      }, 75)
-      window.setTimeout(() => {
-        window.clearInterval(interval)
-        resolve(pick)
-      }, 2000)
-    })
-  }
-
-  const onClick = async (name) => {
-    handleTogglePlayingClick()
-    setUserPick(name)
-    const pick = await launchHomePick()
-    const res = victory({ name, pick })
-    setResults(res)
-    if (res === 'win') setScore(score + 1)
-  }
-  const handleTogglePlayingClick = () => {
-    setPlaying((pre) => !pre)
-    setResults('')
-  }
+  const {
+    handleTogglePlayingClick,
+    homePick,
+    onClickPlayGame,
+    playing,
+    results,
+    userPick
+  } = useTable()
 
   return (
     <TableStyled playing={playing}>
@@ -101,19 +21,21 @@ export function Table () {
       {!playing
         ? (
           <>
-            <Token name='paper' onClick={onClick} />
-            <Token name='scissors' onClick={onClick} />
-            <Token name='rock' onClick={onClick} />
+            <Token name='paper' onClick={onClickPlayGame} />
+            <Token name='scissors' onClick={onClickPlayGame} />
+            <Token name='rock' onClick={onClickPlayGame} />
           </>
           )
         : (
           <>
             <div className='in-game'>
-              <Token name={userPick} isShadowAnimated={(results === 'win')} />
+              <Token name={userPick} isShadowAnimated={results === 'win'} />
               <p>YOU PICKED</p>
             </div>
             <div className='in-game'>
-              {homePick && <Token name={homePick} isShadowAnimated={(results === 'lose')} />}
+              {homePick && (
+                <Token name={homePick} isShadowAnimated={results === 'lose'} />
+              )}
               <p>HOUSE PICKED</p>
             </div>
             {results && (
@@ -122,7 +44,8 @@ export function Table () {
                 <WhiteButton onClick={handleTogglePlayingClick}>
                   TRY AGAIN
                 </WhiteButton>
-              </div>)}
+              </div>
+            )}
           </>
           )}
     </TableStyled>

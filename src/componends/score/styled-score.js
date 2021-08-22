@@ -5,7 +5,7 @@ export const ScoreStyled = styled.div`
   text-align: center;
   padding: 10px 0;
   border-radius: 8px;
-  width: 80px;
+  width: 5em;
 
   small {
     color: #2A45C2;
