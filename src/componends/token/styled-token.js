@@ -8,7 +8,7 @@ const shadow = keyframes`
 `
 
 export const TokenStyled = styled.div`
-  background-color: ${({ name }) => (name === 'default' ? '#122343' : 'white')};
+  background-color: white;
   border-radius: 50%;
   border: 0.9em solid ${({ color }) => color.base};
   box-shadow: 0 5px 0 ${({ color }) => color.border};
@@ -35,7 +35,7 @@ export const TokenStyled = styled.div`
     justify-content: center;
     align-self: stretch;
     border-radius: 50%;
-    box-shadow: 0 -4px 0 ${({ name }) => (name === 'default' ? 'transparent' : '#bbc0d5')};
+    box-shadow: 0 -4px 0 #bbc0d5;
   }
 
   @media screen and (min-width: 768px) {
