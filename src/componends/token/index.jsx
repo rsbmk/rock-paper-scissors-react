@@ -36,7 +36,10 @@ export function Token ({
     >
       <div className='box'>
         {name !== 'default' && (
-          <img src={`./src/images/icon-${name}.svg`} alt='' />
+          <img
+            src={`https://raw.githubusercontent.com/rsbmk/rock-paper-scissors-react/e0c9edde82fd7e1352f883ded9462a8300ee55ac/src/images/icon-${name}.svg`}
+            alt=''
+          />
         )}
       </div>
     </TokenStyled>
