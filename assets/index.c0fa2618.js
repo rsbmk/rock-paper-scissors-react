@@ -1,4 +1,4 @@
-var e=Object.defineProperty,t=Object.defineProperties,r=Object.getOwnPropertyDescriptors,n=Object.getOwnPropertySymbols,o=Object.prototype.hasOwnProperty,a=Object.prototype.propertyIsEnumerable,i=(t,r,n)=>r in t?e(t,r,{enumerable:!0,configurable:!0,writable:!0,value:n}):t[r]=n,l=(e,t)=>{for(var r in t||(t={}))o.call(t,r)&&i(e,r,t[r]);if(n)for(var r of n(t))a.call(t,r)&&i(e,r,t[r]);return e},s=(e,n)=>t(e,r(n));import{s as c,r as m,R as d,W as u,a as p}from"./vendor.6c840ed1.js";!function(){const e=document.createElement("link").relList;if(!(e&&e.supports&&e.supports("modulepreload"))){for(const e of document.querySelectorAll('link[rel="modulepreload"]'))t(e);new MutationObserver((e=>{for(const r of e)if("childList"===r.type)for(const e of r.addedNodes)"LINK"===e.tagName&&"modulepreload"===e.rel&&t(e)})).observe(document,{childList:!0,subtree:!0})}function t(e){if(e.ep)return;e.ep=!0;const t=function(e){const t={};return e.integrity&&(t.integrity=e.integrity),e.referrerpolicy&&(t.referrerPolicy=e.referrerpolicy),"use-credentials"===e.crossorigin?t.credentials="include":"anonymous"===e.crossorigin?t.credentials="omit":t.credentials="same-origin",t}(e);fetch(e.href,t)}}();const g=c.main`
+var e=Object.defineProperty,t=Object.defineProperties,r=Object.getOwnPropertyDescriptors,n=Object.getOwnPropertySymbols,o=Object.prototype.hasOwnProperty,a=Object.prototype.propertyIsEnumerable,i=(t,r,n)=>r in t?e(t,r,{enumerable:!0,configurable:!0,writable:!0,value:n}):t[r]=n,s=(e,t)=>{for(var r in t||(t={}))o.call(t,r)&&i(e,r,t[r]);if(n)for(var r of n(t))a.call(t,r)&&i(e,r,t[r]);return e},l=(e,n)=>t(e,r(n));import{s as c,r as m,R as d,W as u,a as p}from"./vendor.6c840ed1.js";!function(){const e=document.createElement("link").relList;if(!(e&&e.supports&&e.supports("modulepreload"))){for(const e of document.querySelectorAll('link[rel="modulepreload"]'))t(e);new MutationObserver((e=>{for(const r of e)if("childList"===r.type)for(const e of r.addedNodes)"LINK"===e.tagName&&"modulepreload"===e.rel&&t(e)})).observe(document,{childList:!0,subtree:!0})}function t(e){if(e.ep)return;e.ep=!0;const t=function(e){const t={};return e.integrity&&(t.integrity=e.integrity),e.referrerpolicy&&(t.referrerPolicy=e.referrerpolicy),"use-credentials"===e.crossorigin?t.credentials="include":"anonymous"===e.crossorigin?t.credentials="omit":t.credentials="same-origin",t}(e);fetch(e.href,t)}}();const g=c.main`
   color: white;
   background-image: radial-gradient(circle at top, #1e3757 20%, #131537 100%);
 
@@ -42,7 +42,7 @@ var e=Object.defineProperty,t=Object.defineProperties,r=Object.getOwnPropertyDes
       line-height: 1;
       text-transform: uppercase;
     }
-  `;function x(){return d.createElement(w,null,d.createElement("h1",null,"Rock",d.createElement("br",null),"Paper",d.createElement("br",null)," Scissors"),d.createElement(y,null))}const k=c.button`
+  `;function k(){return d.createElement(w,null,d.createElement("h1",null,"Rock",d.createElement("br",null),"Paper",d.createElement("br",null)," Scissors"),d.createElement(y,null))}const x=c.button`
   background-color: transparent;
   border-radius: 0.5em;
   border: 1px solid white;
@@ -62,10 +62,10 @@ var e=Object.defineProperty,t=Object.defineProperties,r=Object.getOwnPropertyDes
     background-color: white;
     color: #1d1d1d;
   }
-`,E=c(k)`
+`,E=c(x)`
   background-color: white;
   color: #1d1d1d;
-`;function v({children:e,onClick:t}){return d.createElement(k,{onClick:t},e)}const P=c.div`
+`;function v({children:e,onClick:t}){return d.createElement(x,{onClick:t},e)}const P=c.div`
   text-align: center;
 
   .rules-overlay {
@@ -110,7 +110,7 @@ var e=Object.defineProperty,t=Object.defineProperties,r=Object.getOwnPropertyDes
       width: 31.25em;
     }
   }
-`;function C(){const[e,t]=m.exports.useState(!1),r=e=>t((e=>!e));return d.createElement(P,{visible:e},e&&d.createElement("div",{onClick:r,className:"rules-overlay"},d.createElement("h2",null,"RULES"),d.createElement("img",{src:"./src/images/image-rules.svg",alt:"Game Reles"})),d.createElement(v,{onClick:r},"RULES"))}const S=c.div`
+`;function C(){const[e,t]=m.exports.useState(!1),r=e=>t((e=>!e));return d.createElement(P,{visible:e},e&&d.createElement("div",{onClick:r,className:"rules-overlay"},d.createElement("h2",null,"RULES"),d.createElement("img",{src:"https://raw.githubusercontent.com/rsbmk/rock-paper-scissors-react/c9e8437b0479d2dc6a0c57b8cbe1dfb5b9a2f3c8/src/images/image-rules.svg",alt:"Game Reles"})),d.createElement(v,{onClick:r},"RULES"))}const S=c.div`
   display: grid;
   grid-template-columns: 10em 10em;
   justify-content: center;
@@ -182,7 +182,7 @@ var e=Object.defineProperty,t=Object.defineProperties,r=Object.getOwnPropertyDes
       top: 6.25;
     }
   }
-`,j="homePick",O="playing",N="results",A="userPick",z={[j]:(e,t)=>s(l({},e),{homePick:t.payload}),[O]:(e,t)=>s(l({},e),{playing:!e.playing}),[N]:(e,t)=>s(l({},e),{results:t.payload}),[A]:(e,t)=>s(l({},e),{userPick:t.payload})},I={homePick:"default",playing:!1,results:"",userPick:""},R=(e,t)=>{const r=z[t.type];return r?r(e,t):e},$=["paper","scissors","rock"],L=[{user:"paper",home:"paper",results:"draw"},{user:"paper",home:"rock",results:"win"},{user:"paper",home:"scissors",results:"lose"},{user:"rock",home:"paper",results:"lose"},{user:"rock",home:"rock",results:"draw"},{user:"rock",home:"scissors",results:"win"},{user:"scissors",home:"paper",results:"win"},{user:"scissors",home:"rock",results:"lose"},{user:"scissors",home:"scissors",results:"draw"}];function U(){const[e,t]=m.exports.useReducer(R,I),{homePick:r,playing:n,results:o,userPick:a}=e,{score:i,setScore:l}=m.exports.useContext(h);function s(){return new Promise(((e,r)=>{let n="";const o=window.setInterval((()=>{n=$[function({min:e=0,max:t=3}={}){return Math.floor(Math.random()*(t-e))+e}()],t({type:j,payload:n})}),75);window.setTimeout((()=>{window.clearInterval(o),e(n)}),2e3)}))}function c(){t({type:O}),t({type:N,payload:""})}return{handleTogglePlayingClick:c,homePick:r,onClickPlayGame:async e=>{c(),t({type:A,payload:e});const r=function({name:e,pick:t}){return L.find((r=>e===r.user&&t===r.home)).results||""}({name:e,pick:await s()});t({type:N,payload:r}),"win"===r&&l(i+1)},playing:n,results:o,userPick:a}}const G=u`
+`,j="homePick",O="playing",N="results",A="userPick",z={[j]:(e,t)=>l(s({},e),{homePick:t.payload}),[O]:(e,t)=>l(s({},e),{playing:!e.playing}),[N]:(e,t)=>l(s({},e),{results:t.payload}),[A]:(e,t)=>l(s({},e),{userPick:t.payload})},I={homePick:"default",playing:!1,results:"",userPick:""},R=(e,t)=>{const r=z[t.type];return r?r(e,t):e},$=["paper","scissors","rock"],L=[{user:"paper",home:"paper",results:"draw"},{user:"paper",home:"rock",results:"win"},{user:"paper",home:"scissors",results:"lose"},{user:"rock",home:"paper",results:"lose"},{user:"rock",home:"rock",results:"draw"},{user:"rock",home:"scissors",results:"win"},{user:"scissors",home:"paper",results:"win"},{user:"scissors",home:"rock",results:"lose"},{user:"scissors",home:"scissors",results:"draw"}];function U(){const[e,t]=m.exports.useReducer(R,I),{homePick:r,playing:n,results:o,userPick:a}=e,{score:i,setScore:s}=m.exports.useContext(h);function l(){return new Promise(((e,r)=>{let n="";const o=window.setInterval((()=>{n=$[function({min:e=0,max:t=3}={}){return Math.floor(Math.random()*(t-e))+e}()],t({type:j,payload:n})}),75);window.setTimeout((()=>{window.clearInterval(o),e(n)}),2e3)}))}function c(){t({type:O}),t({type:N,payload:""})}return{handleTogglePlayingClick:c,homePick:r,onClickPlayGame:async e=>{c(),t({type:A,payload:e});const r=function({name:e,pick:t}){return L.find((r=>e===r.user&&t===r.home)).results||""}({name:e,pick:await l()});t({type:N,payload:r}),"win"===r&&s(i+1)},playing:n,results:o,userPick:a}}const G=u`
   to{
     box-shadow: 0 0 0 40px rgba(255, 255, 255, .04),0 0 0 80px rgba(255, 255, 255, .03), 0 0 0 120px rgba(255, 255, 255, .02);
     transform: rotateY(360deg) scale(1.1);
@@ -225,4 +225,4 @@ var e=Object.defineProperty,t=Object.defineProperties,r=Object.getOwnPropertyDes
   margin: auto;
   padding: 0 1em;
 
-`;function F({children:e}){return d.createElement(K,null,e)}function q(){return d.createElement(g,null,d.createElement(F,null,d.createElement("div",{className:"app-content"},d.createElement(f,null,d.createElement(x,null),d.createElement(D,null)),d.createElement(C,null))))}p.render(d.createElement(d.StrictMode,null,d.createElement(q,null)),document.getElementById("root"));
+`;function F({children:e}){return d.createElement(K,null,e)}function q(){return d.createElement(g,null,d.createElement(F,null,d.createElement("div",{className:"app-content"},d.createElement(f,null,d.createElement(k,null),d.createElement(D,null)),d.createElement(C,null))))}p.render(d.createElement(d.StrictMode,null,d.createElement(q,null)),document.getElementById("root"));
