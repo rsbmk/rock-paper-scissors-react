@@ -12,7 +12,7 @@ export function Rules () {
        showRules && (
          <div onClick={handleClick} className='rules-overlay'>
            <h2>RULES</h2>
-           <img src='./src/images/image-rules.svg' alt='Game Reles' />
+           <img src='https://raw.githubusercontent.com/rsbmk/rock-paper-scissors-react/c9e8437b0479d2dc6a0c57b8cbe1dfb5b9a2f3c8/src/images/image-rules.svg' alt='Game Reles' />
          </div>
        )
      }
